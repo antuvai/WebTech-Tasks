@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Simple Contact Form</title>
+</head>
+
+		<style>
+
+			h1 { 
+
+				font-size: 60px;
+				font-family: arial;
+
+				}
+
+			
+
+			legend {
+			
+
+				text-align: right;
+				background-color:navy;
+				height: 30px;
+				color: white;
+				border-radius: 5px;
+			}
+
+
+
+				fieldset {
+					border: 1px solid black;
+
+					position: relative;
+					left: 400px;
+
+					width:700px ;
+					height:400px;
+
+				
+					
+					}
+
+					#name, #email{
+						position: relative;
+						left: 100px;
+
+						width: 350px;
+						height: 30px;
+						border: 3px solid red;
+						border-radius: 5px;
+					}
+
+						#message{
+						position: relative;
+						left: 70px;
+
+						width: 350px;
+						height: 70px;
+						border: 3px solid red;
+						border-radius: 5px;
+					}
+
+
+
+				label {	
+							font-weight: bold;
+							font-size: 30px;
+							font-family:times new roman;
+
+
+
+
+				      }
+
+				      #button{
+
+				      	color: white;
+				      	background-color: navy;
+				      	width: 80px;
+				      	height: 30px;
+				      	border-radius: 5px;
+
+
+
+
+				      }
+
+				      #button:hover{
+				      	background-color: red;
+				      	
+
+
+				      }
+
+				      	#checkbox
+				      	{
+
+				      		position: relative;
+				      		left: 70px;
+				      		bottom: 40px;
+				      	}
+
+			
+
+
+
+
+		</style>
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+	<h1>Contact Us</h1>
+
+<fieldset>
+	<legend>Remember to fill in all fields!</legend>
+
+
+		<form  onsubmit="return validate()">
+
+			<label for="name">Name:</label>
+			<input type="text" id="name"name="name"><br><br>
+
+			<label for="email">Email:</label>
+
+			<input type="email" id="email"name="email"><br><br>
+
+
+			<label for="message">Message:</label>
+			<input type="text" id="message"name="Message">
+			<br>
+			<br>
+
+
+			<label for="checkbox">Subscribe to </label><br>
+			<label for="checkbox">Newsteller </label>
+
+			<input type="checkbox" id="checkbox"name="checkbox"><br><br>
+
+			<input type="submit" id="button" value="Send"name="button">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
+</fieldset>
+
+	<script>
+
+		function validate() {
+			// body...
+			const name=document.getElementById("name").value;
+			const email=document.getElementById("email").value;
+			const msg=document.getElementById("message").value;
+			const checkbox=document.getElementById("checkbox").value;
+
+			let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+			
+			if (name=="" || email=="" || msg==""  ||checkbox=="")
+			{
+
+					window.alert("Please fill out all information");
+					return false;
+
+			}
+
+			else if(!email.match(pattern))
+			{
+
+				window.alert("Enter Valid Email");
+
+				return false
+
+			}
+
+
+
+			return true;
+
+		}
+
+
+
+
+
+	</script>
+</body>
+</html>
